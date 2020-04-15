@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="00-FSharpHelp.md" />
     <None Include="00-HelloWorld.fsx" />
   </ItemGroup>
 

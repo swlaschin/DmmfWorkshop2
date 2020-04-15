@@ -24,24 +24,24 @@ This will be especially useful for people learning functional programming -- all
 We will be using F# as our development language. No experience with F# needed.
 Please install the F# compiler and an F#-friendly editor using these instructions:
 
-1. Install F#
+* Install F#
   * [Instructions for Visual Studio and VS Code](https://docs.microsoft.com/en-us/dotnet/fsharp/get-started/install-fsharp)
   * [Instructions for JetBrains Rider](https://www.jetbrains.com/help/rider/F_Sharp.html)
-1. Clone the workshop repo locally. For example, by using
+* Clone the workshop repo locally. For example, by using
 ```
 mkdir DmmfWorkshop2 
 git clone https://github.com/swlaschin/DmmfWorkshop2 
 ```
-1. Open the project:
+* Open the project:
   * In VisualStudio/Rider, open `DmmfWorkshop2.sln`
   * In VS Code, open /src folder
-1. Open `00-HelloWorld.fsx` and follow instructions to check that F# is working
+* Open `00-HelloWorld.fsx` and follow instructions to check that F# is working
 
 
 ## Directory Structure
 
 These folders contain the training material
 
-* /src/ contains the code
-* /doc/ contains pdf documents
+* `/src/` contains the code
+* `/doc/` contains pdf documents
 
