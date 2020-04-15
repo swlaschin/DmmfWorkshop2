@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "DmmfWorkshop2", "src\DmmfWorkshop2.fsproj", "{B6E81CB6-0796-4310-ADD2-6A4D8C89DABA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6E81CB6-0796-4310-ADD2-6A4D8C89DABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6E81CB6-0796-4310-ADD2-6A4D8C89DABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6E81CB6-0796-4310-ADD2-6A4D8C89DABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6E81CB6-0796-4310-ADD2-6A4D8C89DABA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {432E6E9B-7C5A-4FC4-9F97-55543C31EA05}
+	EndGlobalSection
+EndGlobal
