@@ -3,15 +3,37 @@
 // ================================================
 
 (*
-Much code has implicit states that you can recognize by fields called "IsSomething", or nullable date
+Often a domain type has implicit states that you can recognize 
+by the use of boolean fields, or fields which are nullable.
 
-This is a sign that states transitions are present but not being modelled properly.
+These fields are only used sometimes, but in other cases
+are missing or not needed.
+
+This is a sign that a CHOICE of possible states is present 
+but are not being modelled properly.
+
+We saw an example of this with the Unverified/Verified email address
 *)
 
+// before refactoring
+type EmailAddress = EmailAddress of string
+type EmailContact_BeforeRefactoring =
+    {
+    EmailAddress: EmailAddress
+    IsVerified: bool
+    }
+
+// after refactoring
+type VerifiedEmailAddress = VerifiedEmailAddress of EmailAddress 
+type EmailContact_AfterRefactoring =
+    | Unverified of EmailAddress
+    | Verified of VerifiedEmailAddress
+
+// =================================================
 // Exercise A - redesign this type into two states: 
 // * RegisteredCustomer (with an id) OR
 // * GuestCustomer (without an id)
-type Customer_Before =
+type Customer_BeforeRefactoring =
     {
     CustomerName: string
     IsGuest: bool
@@ -21,15 +43,16 @@ type Customer_Before =
 type CustomerName = CustomerName of string
 type RegistrationId  = RegistrationId of int
 
-type Customer_After =
+type Customer_AfterRefactoring =
     | Guest of CustomerName
     | RegisteredCustomer of CustomerName * RegistrationId
 
 
+// =================================================
 // Exercise B - redesign this type into two states: 
 // * Connected (with handle, etc)
 // * OR Disconnected (with reason)
-type Connection_Before =
+type Connection_BeforeRefactoring =
    {
    IsConnected: bool
    ConnectionStartedUtc: System.DateTime option
@@ -41,15 +64,16 @@ type ConnectionHandle = ConnectionHandle of int
 type ConnectionStartedUtc = System.DateTime
 type ReasonForDisconnection = string
 
-type Connection_After =
+type Connection_AfterRefactoring =
     | Connected of ConnectionHandle * ConnectionStartedUtc
     | Disconnected of ReasonForDisconnection
 
 
+// =================================================
 // Exercise C - redesign this type into two states.
 // Can you guess what the states are from the flags?
 // how does the refactored version help improve the documentation?
-type Order_Before =
+type Order_BeforeRefactoring =
    {
    OrderId: int
    IsPaid: bool
@@ -66,7 +90,7 @@ type PaidOrderInfo = {
     Date : PaidDate 
     }
 
-type Order_After =
+type Order_AfterRefactoring =
     | Unpaid of OrderId
     | Paid of PaidOrderInfo 
 

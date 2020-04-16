@@ -1,0 +1,71 @@
+﻿
+## Domain modelling guidelines
+
+* Start with the workflows 
+* What data is needed?
+  * From the event itself
+  * From the current state of the system
+  * What is optional vs. required?
+* What are the output events?
+  * For broadcast to downsteam systems 
+* What is the change in system state? 
+  * Is this a state transition?
+* What are the side effects?
+  * Things that must be done but are internal to the domain
+* What can go wrong?
+  * Model success or failure with an OR choice
+
+* If you hear "it depends", drill deeper
+* Disagreement between experts is OK. The design process is about 
+  getting *everyone* on the same page.
+* Everyone must be in the room. Otherwise they miss being part of the process. 
+  It's not just about the results of the process
+
+====================
+Example
+====================
+
+Workflow name: "Place order"
+Data from Command/Event: 
+    OrderForm
+Other Input Data: 
+    ProductCatalog (to look up prices)
+Output events: 
+    (only if there is a different bounded context that cares what happened)
+    OrderPlaced event
+Output Data: 
+    (ValidatedOrder to store in db
+     AND OrderAcknowledgment to send to the customer)
+    OR OrderValidationError (if input is not valid)
+
+data OrderForm =
+  CustomerInfo
+  AND ShippingAddress
+  AND BillingAddress
+  AND list of OrderLines
+
+data OrderLine =
+  ProductId
+  AND OrderQuantity 
+  AND Price
+
+data OrderValidationError =
+  QuantityTooHigh (with ProductId)    
+  OR ProductNotFound (with ProductId)    
+
+data OrderQuantity = 
+  UnitQuantity 
+  OR KilogramQuantity
+
+data UnitQuantity = integer between 1 and ?
+data KilogramQuantity = decimal between ? and ?
+
+data CustomerInfo = CustomerName AND ContactInfo 
+data BillingAddress = ??? // don't know yet
+
+data CustomerName = FirstName AND LastName
+
+data ContactInfo =
+  EmailAddress
+  OR PhoneNumber
+

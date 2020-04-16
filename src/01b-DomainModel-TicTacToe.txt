@@ -10,7 +10,7 @@ Output events:
     None
 Output Data: 
     updated GameState (to store in db)
-    MoveResult (to return to players)
+    MoveResult (to return information to players)
 
 data MoveInformation =
    Location 
@@ -43,3 +43,5 @@ Output events:
 Output Data: 
     new empty GameState (to store in db)
     MoveResult (to return to players)
+
+data GameState = ??

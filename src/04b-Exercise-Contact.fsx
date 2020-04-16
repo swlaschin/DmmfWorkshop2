@@ -1,5 +1,5 @@
 ﻿// ================================================
-// DDD Exercise: Model a Contact management system
+// DDD Exercise: Model the contact type that was used in the slides
 //
 // ================================================
 
