@@ -7,6 +7,25 @@
   <ItemGroup>
     <None Include="00-FSharpHelp.md" />
     <None Include="00-HelloWorld.fsx" />
+    <Content Include="01a-Domain Modeling Guidelines.txt" />
+    <Content Include="01b-DomainModel-TicTacToe.txt" />
+    <Content Include="01c-DomainModel-CoffeeMaker.txt" />
+    <Content Include="01d-DomainModel-ATM.txt" />
+    <Content Include="01e-DomainModel-Microwave.txt" />
+    <None Include="02a-Converting designs to code.fsx" />
+    <None Include="02b-TicTacToe-ConversionExample.fsx" />
+    <None Include="02c-Exercise-ConvertFromText.fsx" />
+    <None Include="03a-Exercise-PlayWithTypes.fsx" />
+    <None Include="03a-Exercise-PlayWithTypes%28answer%29.fsx" />
+    <None Include="03b-Exercise-CardGame.fsx" />
+    <None Include="03b-Exercise-CardGame %28answers%29.fsx" />
+    <None Include="03c-Exercise-Payments.fsx" />
+    <None Include="03c-Exercise-Payments %28answers%29.fsx" />
+    <None Include="03d-ConstructingDeconstructingTypes.fsx" />
+    <None Include="04a-Exercise-Refactoring flags.fsx" />
+    <None Include="04a-Exercise-Refactoring flags %28answers%29.fsx" />
+    <None Include="04b-Exercise-Contact.fsx" />
+    <None Include="04b-Exercise-Contact %28answers%29.fsx" />
   </ItemGroup>
 
 

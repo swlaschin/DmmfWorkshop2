@@ -1,0 +1,45 @@
+Bounded context: TicTacToe
+
+Workflow: "Play move"
+Data from Command/Event: 
+    MoveInformation
+Other Input Data: 
+    GameState (loaded from db)
+Output events: 
+    (only if there is a different bounded context that cares what happened)
+    None
+Output Data: 
+    updated GameState (to store in db)
+    MoveResult (to return to players)
+
+data MoveInformation =
+   Location 
+   AND Player
+
+data Player =
+    X OR O
+
+data Location =
+    Row AND Column
+
+data MoveResult =
+   Won by Player
+   OR Drawn
+   OR NextTurn of Player
+   OR MoveError
+
+data MoveError =
+    SquareOccupied
+    OR NotYourTurn
+
+
+Workflow: "Start game"
+Data from Command/Event: 
+    None
+Other Input Data: 
+    None
+Output events: 
+    None
+Output Data: 
+    new empty GameState (to store in db)
+    MoveResult (to return to players)
