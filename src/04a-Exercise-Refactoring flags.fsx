@@ -3,13 +3,13 @@
 // ================================================
 
 (*
-Often a domain type has implicit states that you can recognize 
+Often a domain type has implicit states that you can recognize
 by the use of boolean fields, or fields which are nullable.
 
 These fields are only used sometimes, but in other cases
 are missing or not needed.
 
-This is a sign that a CHOICE of possible states is present 
+This is a sign that a CHOICE of possible states is present
 but are not being modelled properly.
 
 We saw an example of this with the Unverified/Verified email address
@@ -24,13 +24,13 @@ type EmailContact_BeforeRefactoring =
     }
 
 // after refactoring
-type VerifiedEmailAddress = VerifiedEmailAddress of EmailAddress 
+type VerifiedEmailAddress = VerifiedEmailAddress of EmailAddress
 type EmailContact_AfterRefactoring =
     | Unverified of EmailAddress
     | Verified of VerifiedEmailAddress
 
 // =================================================
-// Exercise A - redesign this type into two states: 
+// Exercise A - redesign this type into two states:
 // * RegisteredCustomer (with an id) OR
 // * GuestCustomer (without an id)
 type Customer_BeforeRefactoring =
@@ -44,7 +44,7 @@ type Customer_BeforeRefactoring =
 type Customer_AfterRefactoring = ???
 
 // =================================================
-// Exercise B - redesign this type into two states: 
+// Exercise B - redesign this type into two states:
 // * Connected (with handle, etc)
 // * OR Disconnected (with reason)
 type Connection_BeforeRefactoring =

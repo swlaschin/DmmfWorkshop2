@@ -1,19 +1,19 @@
 Bounded context: TicTacToe
 
 Workflow: "Play move"
-Data from Command/Event: 
+Data from Command/Event:
     MoveInformation
-Other Input Data: 
+Other Input Data:
     GameState (loaded from db)
-Output events: 
+Output events:
     (only if there is a different bounded context that cares what happened)
     None
-Output Data: 
+Output Data:
     updated GameState (to store in db)
     MoveResult (to return information to players)
 
 data MoveInformation =
-   Location 
+   Location
    AND Player
 
 data Player =
@@ -34,13 +34,13 @@ data MoveError =
 
 
 Workflow: "Start game"
-Data from Command/Event: 
+Data from Command/Event:
     None
-Other Input Data: 
+Other Input Data:
     None
-Output events: 
+Output events:
     None
-Output Data: 
+Output Data:
     new empty GameState (to store in db)
     MoveResult (to return to players)
 

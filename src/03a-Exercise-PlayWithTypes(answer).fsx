@@ -6,7 +6,7 @@ Add simple definitions (it doesn't matter what they are!)
 so that this file will compile without red squigglies.
 
 
-NOTE: No "module rec" has been used, so in this file, 
+NOTE: No "module rec" has been used, so in this file,
 types must be defined before they are used.
 
 *)
@@ -24,12 +24,12 @@ type ProductId = ProductId of int
 type OrderQty = OrderQty of int
 
 type OrderLine = {
-    ProductId : ProductId  //TODO define a type for ProductId  
-    Qty : OrderQty  //TODO define a type for OrderQty  
+    ProductId : ProductId  //TODO define a type for ProductId
+    Qty : OrderQty  //TODO define a type for OrderQty
     }
 
 type Order = {
-  OrderId : OrderId 
+  OrderId : OrderId
   OrderLines : OrderLine list //TODO define a type for OrderLine
 }
 
@@ -106,16 +106,16 @@ let orderId = OrderId 99
 
 // to deconstruct a wrapper, there are a number of ways
 // Approach 1: use pattern matching with one case
-let value1 = 
+let value1 =
     match orderId with
     | OrderId i -> i // return the inner value
 
 // Approach 2: use pattern matching on the LEFT hand side
-let (OrderId value2) = orderId 
+let (OrderId value2) = orderId
 // value2 is now 99s
 
 // Approach 3: in functions you can use the pattern matching directly in the parameter
-let printOrderId (OrderId value) = 
+let printOrderId (OrderId value) =
     printfn "OrderId = %i" value
 
 // test
@@ -135,7 +135,7 @@ printOrderId orderId   // output is "OrderId = 99"
 // here's example of adding two numbers
 type AddTwoNumbers = int -> int -> int  // the definition
 let addTwoNumbers : AddTwoNumbers =  // the implementation
-    fun n1 n2 -> 
+    fun n1 n2 ->
         n1 + n2
 
 // Now try to implement the PlaceOrder function type from above

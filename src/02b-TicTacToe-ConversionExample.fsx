@@ -7,19 +7,19 @@ module rec TicTacToe
 type undefined = exn
 
 
-/// Workflow: Start a new game    
-type StartGame = unit -> GameState * MoveResult 
+/// Workflow: Start a new game
+type StartGame = unit -> GameState * MoveResult
 // NOTE: "unit" is like "void" -- means no data
 
 // Workflow: Play a move in an existing game
 type PlayMove =
     MoveInformation * GameState // input
       -> MoveResult * GameState // output
-      
+
 // NOTE: the -> arrow needs to be indented to avoid error.
 
 type MoveInformation = {
-   Location : Location 
+   Location : Location
    Player : Player
    }
 
@@ -38,7 +38,7 @@ type MoveResult =
    | Won of Player
    | Drawn
    | NextTurn of Player
-   | MoveError of MoveError 
+   | MoveError of MoveError
 
 type MoveError =
     | SquareOccupied of Location

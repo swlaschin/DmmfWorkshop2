@@ -5,7 +5,7 @@ Some of the types below have not yet been defined.
 Add simple definitions (it doesn't matter what they are!)
 so that this file will compile without red squigglies.
 
-NOTE: No "module rec" has been used, so in this file, 
+NOTE: No "module rec" has been used, so in this file,
 types must be defined before they are used.
 *)
 
@@ -20,8 +20,8 @@ type Name = {
 type OrderId = OrderId of int
 
 type OrderLine = {
-    ProductId : ProductId  //TODO define a type for ProductId  
-    Qty : OrderQty  //TODO define a type for OrderQty  
+    ProductId : ProductId  //TODO define a type for ProductId
+    Qty : OrderQty  //TODO define a type for OrderQty
 }
 
 type Order = {

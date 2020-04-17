@@ -32,7 +32,7 @@ let email = EmailAddress "x@example.com"
 
 // to deconstruct a wrapper, there are a number of ways
 // Approach 1: use pattern matching with one case
-let value1 = 
+let value1 =
     match email with
     | EmailAddress addrStr -> addrStr // return the inner value
 
@@ -40,13 +40,13 @@ let value1 =
 let (EmailAddress addrStr) = email
 
 
-// Approach 3: in functions you can use the 
+// Approach 3: in functions you can use the
 // pattern matching directly in the parameter
-let printEmailAddress (EmailAddress addrStr) = 
+let printEmailAddress (EmailAddress addrStr) =
     printfn "EmailAddress = %s" addrStr
 
 // test
-printEmailAddress email   
+printEmailAddress email
 
 
 // =============================
@@ -62,8 +62,8 @@ type CardInfo = {
 // Use Choice types for OR
 type PaymentMethod =
   | Cash
-  | Card of CardInfo 
-  | PayPal of EmailAddress 
+  | Card of CardInfo
+  | PayPal of EmailAddress
 
 
 // to create, use one of the cases as a function
@@ -104,18 +104,18 @@ paymentMethod3 |> printMethod
 
 
 // the definition
-type AddTwoNumbers = int -> int -> int  
+type AddTwoNumbers = int -> int -> int
 
 // the implementation
-let addTwoNumbers : AddTwoNumbers =  
-    fun n1 n2 -> 
+let addTwoNumbers : AddTwoNumbers =
+    fun n1 n2 ->
         n1 + n2
 
 // the definition
 type UnwrapEmailAddress = EmailAddress -> string
 
 // the implementation
-let UnwrapEmailAddress : UnwrapEmailAddress = 
+let UnwrapEmailAddress : UnwrapEmailAddress =
     fun (EmailAddress addrStr) -> addrStr
 
 

@@ -18,12 +18,12 @@ type undefined = exn
 // ================================
 
 (*
-data Name = 
+data Name =
   FirstName
   AND MiddleInitial
   AND LastName
 
-data Order = 
+data Order =
   OrderId
   AND list of OrderLines
 
@@ -48,15 +48,15 @@ type OrderLine = undefined
 // ================================
 
 (*
-data PaymentMethod = 
+data PaymentMethod =
   Cash
   OR Card (with CardInfo)
   OR PayPal (with EmailAddress)
 *)
 
-type PaymentMethod = 
-  | Cash  
-  | Card of CardInfo  
+type PaymentMethod =
+  | Cash
+  | Card of CardInfo
   | PayPal of EmailAddress
 
 type CardInfo = undefined
@@ -86,8 +86,8 @@ Event data: OrderForm
 Output: OrderPlaced event
 *)
 
-type PlaceOrder = 
-    OrderForm -> OrderPlaced 
+type PlaceOrder =
+    OrderForm -> OrderPlaced
 
 type OrderForm = undefined
 type OrderPlaced = undefined

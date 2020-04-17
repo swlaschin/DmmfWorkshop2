@@ -17,7 +17,7 @@ For credit card payments we need a CardType and CardNumber
 For PayPal we need an EmailAddress
 * EmailAddress is a constrained string
 
-For Bitcoin we need a BitcoinAddress 
+For Bitcoin we need a BitcoinAddress
 * BitcoinAddress is a constrained string
 
 A payment consists of a:
