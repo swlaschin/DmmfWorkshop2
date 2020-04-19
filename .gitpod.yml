@@ -1,0 +1,4 @@
+image: gitpod/workspace-dotnet
+vscode:
+  extensions:
+    - Ionide.Ionide-fsharp@4.9.0:LjU41ecQ08JRNp8EaiYysQ==
